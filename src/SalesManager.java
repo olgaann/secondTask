@@ -1,8 +1,8 @@
 public class SalesManager {
-    protected int[] sales;
+    protected long[] sales;
     protected String managerName;
 
-    public SalesManager(String managerName, int[] sales) {
+    public SalesManager(String managerName, long[] sales) {
         this.managerName = managerName;
         this.sales = sales;
     }
@@ -16,9 +16,9 @@ public class SalesManager {
     }
 
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
