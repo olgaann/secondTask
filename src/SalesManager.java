@@ -1,8 +1,8 @@
 public class SalesManager {
-    protected int[] sales;
+    protected long[] sales;
     protected String managerName;
 
-    public SalesManager(String managerName, int[] sales) {
+    public SalesManager(String managerName, long[] sales) {
         this.managerName = managerName;
         this.sales = sales;
     }
@@ -16,9 +16,9 @@ public class SalesManager {
     }
 
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -26,21 +26,21 @@ public class SalesManager {
         return max;
     }
 
-    public int min(){
-        int min = sales[0];
-        for (int sale : sales) {
+    public long min(){
+        long min = sales[0];
+        for (long sale : sales) {
             if(sale < min) {
                 min = sale;
             }
         }
         return min;
     }
-    public int cutAverage() { //метод расчета среднего "округленного" в меньшую сторону
+    public long cutAverage() { //метод расчета среднего "округленного" в меньшую сторону
         int sum = 0;
-        for (int sale : sales) {
+        for (long sale : sales) {
             sum += sale;
         }
-        int cutAverage = (sum - this.max() - this.min()) / (sales.length - 2);
+        long cutAverage = (sum - this.max() - this.min()) / (sales.length - 2);
         return cutAverage;
     }
 }
